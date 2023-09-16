@@ -18,3 +18,4 @@ Color darkgrey = const Color(0xff1E222B);
 Color headingcolor = const Color(0xffFAFBFD);
 
 Color fontcolor = const Color(0xffB2BBCE);
+Color lightgrey = const Color(0xffE0E2EE);

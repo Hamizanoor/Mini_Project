@@ -58,7 +58,7 @@ class CardItem extends StatelessWidget {
         ],
       ),
       decoration: BoxDecoration(
-        color: Black1,
+        color: lightgrey,
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
