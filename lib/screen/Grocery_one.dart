@@ -3,8 +3,6 @@ import 'package:myfirstapp/constants/app_color.dart';
 import 'package:myfirstapp/widget/card_item.dart';
 import 'package:myfirstapp/widget/custom_search%20bar.dart';
 
-
-
 class GroceryOne extends StatefulWidget {
   const GroceryOne({super.key});
 
@@ -18,12 +16,74 @@ List<String> cardimages = [
   "assets/images/Banner Card (2).png",
 ];
 List<Map<String, String>> cardItemsData = [
-  {"title": "Fresh Lemon", "subtitle": "Organic", "cost": "Unit\$12"},
-  {"title": "Green Tea", "subtitle": "Organic", "cost": "Unit\$12"},
-  {"title": "Fresh Lemon", "subtitle": "Organic", "cost": "Unit\$12"},
-  {"title": "\$325", "subtitle": "Orange Package 1", "cost": "1 bundle"},
-  {"title": "\$89", "subtitle": "Green Tea Package 2", "cost": "1 bundle"},
+  {
+    "title": "Fresh Mango",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath": "assets/images/manggo.png"
+  },
+  {
+    "title": "Green Apple",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath":
+        "assets/images/png-clipart-apple-granny-smith-flavor-green-apple-natural-foods-food.png"
+  },
+  {
+    "title": "Fresh Kiwi",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath": "assets/images/kiwi.png"
+  },
+    {
+    "title": "Cherry",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath": "assets/images/1026.png"
+  },
+    {
+    "title": "StrawBerry",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath": "assets/images/png-clipart-strawberry-fruit-strawberry-thumbnail.png"
+  },
 ];
+List<Map<String, String>> teaItemsData = [
+  {
+    "title": "Green Tea",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath": "assets/images/114-1148485_green-tea-png-pic-green-tea-cup-png.png"
+  },
+  {
+    "title": "Black coffee",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath":
+        "assets/images/Vlg8de-coffee-mug.png"
+  },
+      {
+    "title": "Brownie Piece",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath": "assets/images/png-transparent-two-chocolate-brownies-fudge-cake-chocolate-brownie-milk-bakery-chocolate-brownies-recipe-frozen-dessert-cake.png"
+  },
+  {
+    "title": "Kashmeri Tea",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath": "assets/images/5a547aedab499.png"
+  },
+    {
+    "title": "Brownie CupCake",
+    "subtitle": "Organic",
+    "cost": "Unit\$12",
+    "imagepath": "assets/images/images.jpeg"
+  },
+   
+    
+];
+
 
 class _GroceryOneState extends State<GroceryOne> {
   @override
@@ -179,6 +239,39 @@ class _GroceryOneState extends State<GroceryOne> {
                         title: cardItemsData[index]["title"]!,
                         subtitle: cardItemsData[index]["subtitle"]!,
                         cost: cardItemsData[index]["cost"]!,
+                        imagepath: cardItemsData[index]["imagepath"]!,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 10.0),
+                child: Text(
+                  "Deals on Tea and Brownie",
+                  style: TextStyle(
+                    fontFamily: "Manrope",
+                    fontSize: 30,
+                    fontWeight: FontWeight.w500,
+                    color: darkgrey,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+              Container(
+                height: 150,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  separatorBuilder: (context, _) => SizedBox(width: 12),
+                  itemBuilder: (context, index) => Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CardItem(
+                        title: teaItemsData[index]["title"]!,
+                        subtitle: teaItemsData[index]["subtitle"]!,
+                        cost: teaItemsData[index]["cost"]!,
+                        imagepath: teaItemsData[index]["imagepath"]!,
                       ),
                     ],
                   ),

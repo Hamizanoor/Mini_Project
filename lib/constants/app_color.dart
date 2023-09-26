@@ -13,7 +13,8 @@ Color Darkyellow = const Color(0xffF9B023);
 Color lightyellow = const Color(0xffFFC83A);
 Color Grey = const Color(0xff8891A5);
 Color greyscale = const Color(0xffF8F9FB);
-Color darkgrey = const Color(0xff1E222B); 
+Color darkgrey = const Color(0xff1E222B);
+Color grey1 = const Color(0xff616A7D); 
 
 Color headingcolor = const Color(0xffFAFBFD);
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myfirstapp/screen/shop_by_category-1.dart';
 
-
+import 'package:myfirstapp/widget/container_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ShopOne(),
-    );
+    return MaterialApp(home: ContainerCard());
   }
 }
