@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/constants/app_color.dart';
 
@@ -38,15 +39,20 @@ class ShopCard extends StatelessWidget {
                 ),
                 textAlign: TextAlign.right,
               ),
-              Text(
-                subtitle,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  color: Grey,
-                ),
-                textAlign: TextAlign.right,
-              ),
+    
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: Grey,
+                    ),
+                    textAlign: TextAlign.right,
+                  ),
+                
+                
+              
+               
             ],
           ),
         ],
@@ -66,3 +72,4 @@ class ShopCard extends StatelessWidget {
     );
   }
 }
+ 

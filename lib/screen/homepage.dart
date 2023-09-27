@@ -3,11 +3,11 @@ import 'package:myfirstapp/constants/app_color.dart';
 import 'package:myfirstapp/widget/card_item.dart';
 import 'package:myfirstapp/widget/custom_search%20bar.dart';
 
-class GroceryOne extends StatefulWidget {
-  const GroceryOne({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<GroceryOne> createState() => _GroceryOneState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 List<String> cardimages = [
@@ -35,17 +35,18 @@ List<Map<String, String>> cardItemsData = [
     "cost": "Unit\$12",
     "imagepath": "assets/images/kiwi.png"
   },
-    {
+  {
     "title": "Cherry",
     "subtitle": "Organic",
     "cost": "Unit\$12",
     "imagepath": "assets/images/1026.png"
   },
-    {
+  {
     "title": "StrawBerry",
     "subtitle": "Organic",
     "cost": "Unit\$12",
-    "imagepath": "assets/images/png-clipart-strawberry-fruit-strawberry-thumbnail.png"
+    "imagepath":
+        "assets/images/png-clipart-strawberry-fruit-strawberry-thumbnail.png"
   },
 ];
 List<Map<String, String>> teaItemsData = [
@@ -53,20 +54,21 @@ List<Map<String, String>> teaItemsData = [
     "title": "Green Tea",
     "subtitle": "Organic",
     "cost": "Unit\$12",
-    "imagepath": "assets/images/114-1148485_green-tea-png-pic-green-tea-cup-png.png"
+    "imagepath":
+        "assets/images/114-1148485_green-tea-png-pic-green-tea-cup-png.png"
   },
   {
     "title": "Black coffee",
     "subtitle": "Organic",
     "cost": "Unit\$12",
-    "imagepath":
-        "assets/images/Vlg8de-coffee-mug.png"
+    "imagepath": "assets/images/Vlg8de-coffee-mug.png"
   },
-      {
+  {
     "title": "Brownie Piece",
     "subtitle": "Organic",
     "cost": "Unit\$12",
-    "imagepath": "assets/images/png-transparent-two-chocolate-brownies-fudge-cake-chocolate-brownie-milk-bakery-chocolate-brownies-recipe-frozen-dessert-cake.png"
+    "imagepath":
+        "assets/images/png-transparent-two-chocolate-brownies-fudge-cake-chocolate-brownie-milk-bakery-chocolate-brownies-recipe-frozen-dessert-cake.png"
   },
   {
     "title": "Kashmeri Tea",
@@ -74,18 +76,15 @@ List<Map<String, String>> teaItemsData = [
     "cost": "Unit\$12",
     "imagepath": "assets/images/5a547aedab499.png"
   },
-    {
+  {
     "title": "Brownie CupCake",
     "subtitle": "Organic",
     "cost": "Unit\$12",
     "imagepath": "assets/images/images.jpeg"
   },
-   
-    
 ];
 
-
-class _GroceryOneState extends State<GroceryOne> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -279,33 +278,6 @@ class _GroceryOneState extends State<GroceryOne> {
               ),
             ],
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(
-            Icons.home_sharp,
-            color: lightyellow,
-          ),
-          backgroundColor: Colors.black,
-          tooltip: "Home",
-          elevation: 10,
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.category_outlined),
-              label: "Categories",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_outline),
-              label: "Favourite",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.more_vert_outlined),
-              label: "More",
-            ),
-          ],
         ),
       ),
     );

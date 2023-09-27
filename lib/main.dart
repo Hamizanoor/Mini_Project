@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:myfirstapp/widget/container_card.dart';
+
+import 'package:myfirstapp/widget/navy_bar.dart';
+
+
+
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +15,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: ContainerCard());
+    return MaterialApp(
+      home: NavyBar(),
+    );
   }
 }
