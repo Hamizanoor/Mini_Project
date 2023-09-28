@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myfirstapp/constants/app_color.dart';
+
 
 class Cartitem extends StatelessWidget {
   final IconData icon;
