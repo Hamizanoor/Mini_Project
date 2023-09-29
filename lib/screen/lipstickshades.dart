@@ -3,63 +3,63 @@ import 'package:myfirstapp/constants/app_color.dart';
 import 'package:myfirstapp/widget/cart_module.dart';
 import 'package:scoped_model/scoped_model.dart';
 
-class Fishes extends StatefulWidget {
-  const Fishes({Key? key}) : super(key: key);
+class LipShades extends StatefulWidget {
+  const LipShades({Key? key}) : super(key: key);
 
   @override
-  State<Fishes> createState() => _FishesState();
+  State<LipShades> createState() => _LipShadesState();
 }
 
-class _FishesState extends State<Fishes> {
+class _LipShadesState extends State<LipShades> {
   List<Product> _products = [
     Product(
         id: 1,
-        title: "Clown Fish",
-        subtitle: "Fresh From Sea",
+        title: "BrownShade",
+        subtitle: "Organic",
         cost: 36.0,
         imagepath:
-            "assets/images/404-4048472_clown-fish-png-image-file-clown-fish-png.png",
+            "assets/images/lightbrown.png",
         qty: 1),
     Product(
         id: 2,
-        title: "Gold Fish",
-        subtitle: "Fresh From Sea",
+        title: "AmbitiousShade",
+        subtitle: "Organic",
         cost: 90.0,
         imagepath:
-            "assets/images/415-4155703_goldfish-png-transparent-image-gold-fish-images-png.png",
+            "assets/images/red.png",
         qty: 1),
     Product(
         id: 3,
-        title: "Haddock Fish",
-        subtitle: "Fresh From Sea",
+        title: "FounderShade",
+        subtitle: "Organic",
         cost: 80.0,
         imagepath:
-            "assets/images/png-clipart-pollock-pollack-atlantic-cod-haddock-shoal-of-fish-animals-seafood.png",
+            "assets/images/purple.png",
         qty: 1),
     Product(
         id: 4,
-        title: "Salmon Fish",
-        subtitle: "Fresh From Sea",
+        title: "PioneerShade",
+        subtitle: "Organic",
         cost: 60.0,
         imagepath:
-            "assets/images/png-clipart-rainbow-trout-chinook-salmon-atlantic-salmon-coho-salmon-other-templates-animals-seafood.png",
+            "assets/images/orange.png",
         qty: 1),
     Product(
       id: 5,
-      title: "Perch",
-      subtitle: " Fresh From Sea",
+      title: "RomanticShade",
+      subtitle: "Organic",
       cost: 60.0,
       imagepath:
-          "assets/images/png-transparent-northern-pike-european-perch-freshwater-fish-angling-fish-animals-seafood-fauna.png",
+          "assets/images/babypink.png",
       qty: 1,
     ),
     Product(
       id: 6,
-      title: "Tuna Fish",
-      subtitle: " Fresh From Sea",
+      title: "InnovatorShade",
+      subtitle: " Organic",
       cost: 70.0,
       imagepath:
-          "assets/images/378-3781643_pure-fresh-tuna-steaks-fresh-tuna-fish-png.png",
+          "assets/images/innovator.png",
       qty: 1,
     ),
   ];
@@ -76,7 +76,7 @@ class _FishesState extends State<Fishes> {
       backgroundColor: Colors.indigo[50],
       appBar: AppBar(
         backgroundColor:Darkblue,
-        title: Text("Big and Small Fishes"),
+        title: Text("Maybelline LipstickShades"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.shopping_cart),
@@ -93,7 +93,7 @@ class _FishesState extends State<Fishes> {
               return ScopedModelDescendant<CartModel>(
                   builder: (context, child, model) {
                 return Card( child: Column( children: <Widget>[
-                  Image.asset(_products[index].imagepath, height: 100, width: 130,),
+                  Image.asset(_products[index].imagepath, height: 80, width: 80,),
                   Text(_products[index].title, style: TextStyle(fontWeight: FontWeight.bold),),
                   Text(_products[index].subtitle),
                 Text("\$${_products[index].cost.toStringAsFixed(2)}"),

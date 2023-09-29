@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/constants/app_color.dart';
-import 'package:myfirstapp/screen/fishes.dart';
+
+import 'package:myfirstapp/screen/lipstickshades.dart';
 import 'package:myfirstapp/widget/container_card.dart';
 
 class Categorytwo extends StatefulWidget {
@@ -12,44 +13,40 @@ class Categorytwo extends StatefulWidget {
 
 List<Map<String, String>> ContainerCardData = [
   {
-    "title": " Big and Small Fishes",
-    "subtitle": "Fresh From Sea",
+    "title": "LipstickShades",
+    "subtitle": "Organic",
     "cost": "\$36/KG",
-    "imagepath": "assets/images/concealer.png"
+    "imagepath": "assets/images/shades1.png"
   },
   {
-    "title": "Halal Meats",
-    "subtitle": "Organic and Fresh",
+    "title": "TubeFoundations",
+    "subtitle": "Organic",
     "cost": "\$90/KG",
-    "imagepath":
-        "assets/images/png-transparent-raw-meat-with-spices-red-meat-beef-steak-food-beef-meat-beef-roast-beef-supermarket.png"
+    "imagepath": "assets/images/tubefoundation.png"
   },
   {
-    "title": "Vegetables",
-    "subtitle": "Organic and Fresh",
+    "title": "CompactPowder",
+    "subtitle": "Organic",
     "cost": "\$80/KG",
-    "imagepath":
-        "assets/images/fruits-vegetables-exotic-veggies-simply-organic-cart-2.png"
+    "imagepath": "assets/images/compact2.png"
   },
   {
-    "title": "Fruits",
+    "title": "BlushKit",
     "subtitle": "Fresh & Organic",
     "cost": "\$90/KG",
-    "imagepath":
-        "assets/images/png-clipart-assorted-fruits-seedless-fruit-food-gift-basket-fruit-natural-foods-dried-fruit-thumbnail.png"
+    "imagepath": "assets/images/blushkit.png"
   },
   {
-    "title": "Dry Fruits",
-    "subtitle": " Fresh & Organic",
+    "title": "EyeShadowKit",
+    "subtitle": " Organic",
     "cost": "\$60/KG",
-    "imagepath": "assets/images/Dry-Fruit-Healthy-Snack-PNG-Photos.png"
+    "imagepath": "assets/images/eyeshadow2.png"
   },
   {
-    "title": "Dairy Products",
-    "subtitle": " Fresh & Organic",
+    "title": "Mascara",
+    "subtitle": " Organic",
     "cost": "\70/KG",
-    "imagepath":
-        "assets/images/png-clipart-buttermilk-dairy-products-kheer-chese-food-cheese-thumbnail.png"
+    "imagepath": "assets/images/mascara1.png"
   },
 ];
 
@@ -57,12 +54,12 @@ class _CategorytwoState extends State<Categorytwo> {
   void onSearchIconTap() {}
 
   void onShoppingBagIconTap() {}
-  void onBigAndSmallFishesTap() {
-    print("Big and Small Fishes card tapped");
+  void MaybellineLipstickShadesTap() {
+    print("MaybellineLipstickShades card tapped");
     Navigator.push(
       context,
       MaterialPageRoute(
-          builder: (context) => Fishes()), // Navigate to the Fishes screen
+          builder: (context) => LipShades()), // Navigate to the Fishes screen
     );
   }
 
@@ -148,7 +145,7 @@ class _CategorytwoState extends State<Categorytwo> {
                     ActionChip(
                       elevation: 5.0,
                       padding: EdgeInsets.all(2.0),
-                      label: Text('Meat and Fishes'),
+                      label: Text('Lipstick'),
                       onPressed: () {},
                       backgroundColor: lightyellow,
                     ),
@@ -158,7 +155,7 @@ class _CategorytwoState extends State<Categorytwo> {
                     ActionChip(
                       elevation: 5.0,
                       padding: EdgeInsets.all(2.0),
-                      label: Text('Vegetables'),
+                      label: Text("EyeShadow"),
                       onPressed: () {},
                       backgroundColor: Colors.white,
                       shape: StadiumBorder(
@@ -174,7 +171,7 @@ class _CategorytwoState extends State<Categorytwo> {
                     ActionChip(
                       elevation: 8.0,
                       padding: EdgeInsets.all(2.0),
-                      label: Text('Fruits'),
+                      label: Text("BlushKit"),
                       onPressed: () {},
                       backgroundColor: Colors.white,
                       shape: StadiumBorder(
@@ -190,7 +187,7 @@ class _CategorytwoState extends State<Categorytwo> {
                     ActionChip(
                       elevation: 8.0,
                       padding: EdgeInsets.all(2.0),
-                      label: Text("Dry Fruits"),
+                      label: Text("TubeFoundation"),
                       onPressed: () {},
                       backgroundColor: Colors.white,
                       shape: StadiumBorder(
@@ -206,7 +203,7 @@ class _CategorytwoState extends State<Categorytwo> {
                     ActionChip(
                       elevation: 8.0,
                       padding: EdgeInsets.all(2.0),
-                      label: Text("Dairy Products"),
+                      label: Text("Mascara"),
                       onPressed: () {},
                       backgroundColor: Colors.white,
                       shape: StadiumBorder(
@@ -227,26 +224,19 @@ class _CategorytwoState extends State<Categorytwo> {
                 child: ListView.builder(
                   itemCount: ContainerCardData.length,
                   itemBuilder: (BuildContext context, int index) {
-                    final cardTitle = ContainerCardData[index]["title"]!;
-                    if (cardTitle == "Big and Small Fishes") {
-                      return GestureDetector(
-                        onTap:
-                            onBigAndSmallFishesTap, // Call the function when tapped
+                    return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return LipShades();
+                          }));
+                        },
                         child: ContainerCard(
-                          title: cardTitle,
+                          title: ContainerCardData[index]["title"]!,
                           subtitle: ContainerCardData[index]["subtitle"]!,
                           cost: ContainerCardData[index]["cost"]!,
                           imagepath: ContainerCardData[index]["imagepath"]!,
-                        ),
-                      );
-                    } else {
-                      return ContainerCard(
-                        title: cardTitle,
-                        subtitle: ContainerCardData[index]["subtitle"]!,
-                        cost: ContainerCardData[index]["cost"]!,
-                        imagepath: ContainerCardData[index]["imagepath"]!,
-                      );
-                    }
+                        ));
                   },
                 ),
               ),

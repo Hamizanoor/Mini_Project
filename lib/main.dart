@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/screen/Category2.dart';
-import 'package:myfirstapp/screen/Category_one.dart';
-import 'package:myfirstapp/screen/fishes.dart';
+
 import 'package:myfirstapp/widget/cart_module.dart';
 import 'package:myfirstapp/widget/cart_page.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Shopping Cart',
-        home: Categoryone(),
+        home: Categorytwo(),
         routes: {'/cart': (context) => CartPage()},
       ),
     );

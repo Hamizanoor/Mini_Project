@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/constants/app_color.dart';
-import 'package:myfirstapp/widget/cart_module.dart';
 import 'package:myfirstapp/widget/shopcard.dart';
-import 'package:scoped_model/scoped_model.dart';
+
 
 class Categoryone extends StatefulWidget {
   const Categoryone({Key? key}) : super(key: key);
@@ -22,7 +21,7 @@ List<Map<String, String>> ShopCardData = [
     "title": "Maybelline Foundation ",
     "subtitle": "Organic",
     "imagepath":
-        "assets/images/tubefpundation.png"
+        "assets/images/tubefoundation.png"
   },
   {
     "title": "Maybelline Mascara",
