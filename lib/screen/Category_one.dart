@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/constants/app_color.dart';
+import 'package:myfirstapp/widget/cart_module.dart';
 import 'package:myfirstapp/widget/shopcard.dart';
+import 'package:scoped_model/scoped_model.dart';
 
 class Categoryone extends StatefulWidget {
   const Categoryone({Key? key}) : super(key: key);
@@ -11,40 +13,40 @@ class Categoryone extends StatefulWidget {
 
 List<Map<String, String>> ShopCardData = [
   {
-    "title": "Fishes",
-    "subtitle": "From Sea",
-    "imagepath":
-        "assets/images/pngtree-rohu-carp-fish-png-png-image_6940208.png"
-  },
-  {
-    "title": "Meats",
+    "title": "Maybelline EyeShadowKit",
     "subtitle": "Organic",
     "imagepath":
-        "assets/images/png-transparent-raw-meat-with-spices-red-meat-beef-steak-food-beef-meat-beef-roast-beef-supermarket.png"
+        "assets/images/eyeshadow.png"
   },
   {
-    "title": "Vegetables",
+    "title": "Maybelline Foundation ",
     "subtitle": "Organic",
     "imagepath":
-        "assets/images/png-clipart-vegetable-auglis-aedmaasikas-fresh-vegetables-template-natural-foods.png"
+        "assets/images/tubefpundation.png"
   },
   {
-    "title": "Fruits",
-    "subtitle": "Fresh & Organic",
+    "title": "Maybelline Mascara",
+    "subtitle": "Organic",
     "imagepath":
-        "assets/images/png-transparent-assorted-fruits-display-fruit-fruit-natural-foods-frutti-di-bosco-image-file-formats-thumbnail.png"
+        "assets/images/mascara.png.png"
   },
   {
-    "title": "Dry Fruits",
-    "subtitle": " Fresh & Organic",
+    "title": "Maybelline BlushKit",
+    "subtitle": "Organic",
     "imagepath":
-        "assets/images/415-4159561_dry-fruits-png-hd-transparent-png.png"
+        "assets/images/blush.png"
   },
   {
-    "title": "Dairy Products",
-    "subtitle": " Fresh & Organic",
+    "title": "Maybelline Lipstick",
+    "subtitle": "Organic",
     "imagepath":
-        "assets/images/png-transparent-milk-dairy-products-dairy-farming-food-milk-food-cheese-eating.png"
+        "assets/images/listlipstick.png"
+  },
+  {
+    "title": "Maybelline Compact",
+    "subtitle": "Organic",
+    "imagepath":
+        "assets/images/compact.png"
   },
 ];
 
@@ -52,6 +54,7 @@ class _CategoryoneState extends State<Categoryone> {
   void onSearchIconTap() {}
 
   void onShoppingBagIconTap() {}
+
 
   @override
   Widget build(BuildContext context) {
@@ -142,3 +145,4 @@ class _CategoryoneState extends State<Categoryone> {
     );
   }
 }
+

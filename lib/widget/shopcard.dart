@@ -25,8 +25,8 @@ class ShopCard extends StatelessWidget {
         children: [
           Image.asset(
             imagepath,
-            height: 70,
-            width: 70,
+            height: 110,
+            width: 110,
           ),
           SizedBox(height: 10),
           Column(

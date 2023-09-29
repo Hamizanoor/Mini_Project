@@ -35,7 +35,6 @@ class _screentwoState extends State<screentwo> {
         height: 812,
         width: 375,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
           color: Lightblue,
         ),
         child: Column(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/constants/app_color.dart';
+import 'package:myfirstapp/screen/fishes.dart';
 import 'package:myfirstapp/widget/container_card.dart';
 
 class Categorytwo extends StatefulWidget {
@@ -14,8 +15,7 @@ List<Map<String, String>> ContainerCardData = [
     "title": " Big and Small Fishes",
     "subtitle": "Fresh From Sea",
     "cost": "\$36/KG",
-    "imagepath":
-        "assets/images/png-transparent-raw-meat-venison-halal-goat-meat-broiler-meet-food-beef-chicken-meat.png"
+    "imagepath": "assets/images/concealer.png"
   },
   {
     "title": "Halal Meats",
@@ -57,6 +57,14 @@ class _CategorytwoState extends State<Categorytwo> {
   void onSearchIconTap() {}
 
   void onShoppingBagIconTap() {}
+  void onBigAndSmallFishesTap() {
+    print("Big and Small Fishes card tapped");
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => Fishes()), // Navigate to the Fishes screen
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -219,14 +227,27 @@ class _CategorytwoState extends State<Categorytwo> {
                 child: ListView.builder(
                   itemCount: ContainerCardData.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return ContainerCard(
-                      title: ContainerCardData[index]["title"]!,
-                      subtitle: ContainerCardData[index]["subtitle"]!,
-                      cost: ContainerCardData[index]["cost"]!,
-                      imagepath: ContainerCardData[index]["imagepath"]!,
-                    );
+                    final cardTitle = ContainerCardData[index]["title"]!;
+                    if (cardTitle == "Big and Small Fishes") {
+                      return GestureDetector(
+                        onTap:
+                            onBigAndSmallFishesTap, // Call the function when tapped
+                        child: ContainerCard(
+                          title: cardTitle,
+                          subtitle: ContainerCardData[index]["subtitle"]!,
+                          cost: ContainerCardData[index]["cost"]!,
+                          imagepath: ContainerCardData[index]["imagepath"]!,
+                        ),
+                      );
+                    } else {
+                      return ContainerCard(
+                        title: cardTitle,
+                        subtitle: ContainerCardData[index]["subtitle"]!,
+                        cost: ContainerCardData[index]["cost"]!,
+                        imagepath: ContainerCardData[index]["imagepath"]!,
+                      );
+                    }
                   },
-                  
                 ),
               ),
             ),
