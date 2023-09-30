@@ -6,6 +6,8 @@ class CartModel extends Model {
 
   int get total => cart.length;
 
+  get cartItems => null;
+
   void addProduct(product) {
     int index = cart.indexWhere((i) => i.id == product.id);
     print(index);
@@ -59,3 +61,4 @@ class Product {
 
   Product({required this.id, required this.title, required this.cost, required this.qty, required this.imagepath ,required this.subtitle});
 }
+

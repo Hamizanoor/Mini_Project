@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myfirstapp/constants/app_color.dart';
-import 'package:myfirstapp/widget/cart_module.dart';
 import 'package:scoped_model/scoped_model.dart';
+
+import 'cart_module.dart';
 
 class CartPage extends StatefulWidget {
   @override
@@ -15,7 +15,7 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Darkblue,
+        backgroundColor: Colors.indigo,
         title: Text("Cart"),
         actions: <Widget>[
           ElevatedButton(

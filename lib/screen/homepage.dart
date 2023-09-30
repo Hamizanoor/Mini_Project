@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/constants/app_color.dart';
+import 'package:myfirstapp/screen/Category_one.dart';
+import 'package:myfirstapp/screen/favurite.dart';
+import 'package:myfirstapp/screen/more.dart';
 import 'package:myfirstapp/widget/card_item.dart';
+
 import 'package:myfirstapp/widget/custom_search%20bar.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -15,183 +19,204 @@ List<String> cardimages = [
   "assets/images/Banner Card (1).png",
   "assets/images/Banner Card (2).png",
 ];
-List<Map<String, String>> cardItemsData = [
+List<Map<String, String>> makeupItemsData = [
   {
-    "title": "Fresh Mango",
+    "title": "EyeShadowKit",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath": "assets/images/manggo.png"
+    "cost": "12.0",
+    "imagepath": "assets/images/cceyeshadow.png",
   },
   {
-    "title": "Green Apple",
+    "title": "Highlighter",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath":
-        "assets/images/png-clipart-apple-granny-smith-flavor-green-apple-natural-foods-food.png"
+    "cost": "12.0",
+    "imagepath": "assets/images/chighlther.png",
   },
   {
-    "title": "Fresh Kiwi",
+    "title": "Kajal",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath": "assets/images/kiwi.png"
+    "cost": "12.0",
+    "imagepath": "assets/images/kajal.png",
   },
   {
-    "title": "Cherry",
+    "title": "Mascara",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath": "assets/images/1026.png"
+    "cost": "1.02",
+    "imagepath": "assets/images/cmascara.png",
   },
   {
-    "title": "StrawBerry",
+    "title": "TvStick",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath":
-        "assets/images/png-clipart-strawberry-fruit-strawberry-thumbnail.png"
+    "cost": "12",
+    "imagepath": "assets/images/paintstick.png",
   },
 ];
-List<Map<String, String>> teaItemsData = [
+
+List<Map<String, String>> dealsItemsData = [
   {
-    "title": "Green Tea",
+    "title": "Highlighter",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath":
-        "assets/images/114-1148485_green-tea-png-pic-green-tea-cup-png.png"
+    "cost": "12.0",
+    "imagepath": "assets/images/stickhighliter.png",
   },
   {
-    "title": "Black coffee",
+    "title": "Powder",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath": "assets/images/Vlg8de-coffee-mug.png"
+    "cost": "12.0",
+    "imagepath": "assets/images/cccccompact.png",
   },
   {
-    "title": "Brownie Piece",
+    "title": "Lipstick",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath":
-        "assets/images/png-transparent-two-chocolate-brownies-fudge-cake-chocolate-brownie-milk-bakery-chocolate-brownies-recipe-frozen-dessert-cake.png"
+    "cost": "12.0",
+    "imagepath": "assets/images/clipstick.png",
   },
   {
-    "title": "Kashmeri Tea",
+    "title": "Concealer",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath": "assets/images/5a547aedab499.png"
+    "cost": "12.0",
+    "imagepath": "assets/images/concealer.png",
   },
   {
-    "title": "Brownie CupCake",
+    "title": "MateLipstick",
     "subtitle": "Organic",
-    "cost": "Unit\$12",
-    "imagepath": "assets/images/images.jpeg"
+    "cost": "12",
+    "imagepath": "assets/images/MATTE.PNG",
   },
 ];
 
 class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
+  final List<Widget> _pages = [Categoryone(), favourite(), More()];
+
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+    if (index == 1) {
+      // Navigate to the category screen
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Categoryone()));
+    }
+    if (index == 2) {
+      // Navigate to the category screen
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => favourite()));
+    }
+    if (index == 3) {
+      // Navigate to the category screen
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => More()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 100,
-          leadingWidth: 70,
-          backgroundColor: Lightblue,
-          title: Padding(
-            padding: const EdgeInsets.only(bottom: 10.0),
-            child: Text(
-              "Hey, Hilal",
-              style: TextStyle(
-                fontFamily: "Manrope",
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
+          appBar: AppBar(
+            toolbarHeight: 100,
+            leadingWidth: 70,
+            backgroundColor: Lightblue,
+            title: Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text(
+                "Hey, Hilal",
+                style: TextStyle(
+                  fontFamily: "Manrope",
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                  color:Black1,
+                ),
+                textAlign: TextAlign.right,
               ),
-              textAlign: TextAlign.right,
+            ),
+            actions: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20.0),
+                child: Icon(Icons.shopping_bag_outlined),
+              ),
+            ],
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(100.0),
+              child: Column(
+                children: [
+                  Center(
+                    child: CustomBar(
+                      hintText: "Search Products or store",
+                      prefixIcon: Icons.search,
+                      prefixiconcolor: greyscale,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(4.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Delivery to",
+                              style: TextStyle(
+                                fontFamily: "Manrope",
+                                fontSize: 11,
+                                fontWeight: FontWeight.w800,
+                                color: greyscale,
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Green Way 3000, Sylhet",
+                                  style: TextStyle(
+                                    fontFamily: "Manrope",
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: greyscale,
+                                  ),
+                                ),
+                                Icon(Icons.arrow_drop_down),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Within",
+                              style: TextStyle(
+                                fontFamily: "Manrope",
+                                fontSize: 11,
+                                fontWeight: FontWeight.w800,
+                                color: greyscale,
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "1 Hour",
+                                  style: TextStyle(
+                                    fontFamily: "Manrope",
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    color: greyscale,
+                                  ),
+                                ),
+                                Icon(Icons.arrow_drop_down),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          actions: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
-              child: Icon(Icons.shopping_bag_outlined),
-            ),
-          ],
-          bottom: PreferredSize(
-            preferredSize: Size.fromHeight(100.0),
-            child: Column(
-              children: [
-                Center(
-                  child: CustomBar(
-                    hintText: "Search Products or store",
-                    prefixIcon: Icons.search,
-                    prefixiconcolor: greyscale,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.all(4.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Delivery to",
-                            style: TextStyle(
-                              fontFamily: "Manrope",
-                              fontSize: 11,
-                              fontWeight: FontWeight.w800,
-                              color: Grey,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                "Green Way 3000, Sylhet",
-                                style: TextStyle(
-                                  fontFamily: "Manrope",
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  color: greyscale,
-                                ),
-                              ),
-                              Icon(Icons.arrow_drop_down),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Within",
-                            style: TextStyle(
-                              fontFamily: "Manrope",
-                              fontSize: 11,
-                              fontWeight: FontWeight.w800,
-                              color: Grey,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                "1 Hour",
-                                style: TextStyle(
-                                  fontFamily: "Manrope",
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  color: greyscale,
-                                ),
-                              ),
-                              Icon(Icons.arrow_drop_down),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-        body: SingleChildScrollView(
+          body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -226,28 +251,28 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Container(
-                height: 150,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  separatorBuilder: (context, _) => SizedBox(width: 12),
-                  itemBuilder: (context, index) => Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CardItem(
-                        title: cardItemsData[index]["title"]!,
-                        subtitle: cardItemsData[index]["subtitle"]!,
-                        cost: cardItemsData[index]["cost"]!,
-                        imagepath: cardItemsData[index]["imagepath"]!,
-                      ),
-                    ],
+                  height: 150,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    separatorBuilder: (context, _) => SizedBox(width: 12),
+                    itemBuilder: (context, index) => Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CardItem(
+                          title: makeupItemsData[index]["title"]!,
+                          subtitle: makeupItemsData[index]["subtitle"]!,
+                          cost: makeupItemsData[index]["cost"]!,
+                          imagepath: makeupItemsData[index]["imagepath"]!,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Padding(
+                Padding(
                 padding: EdgeInsets.only(bottom: 10.0),
                 child: Text(
-                  "Deals on Tea and Brownie",
+                  "Deals on MakeUp",
                   style: TextStyle(
                     fontFamily: "Manrope",
                     fontSize: 30,
@@ -257,29 +282,52 @@ class _HomePageState extends State<HomePage> {
                   textAlign: TextAlign.left,
                 ),
               ),
-              Container(
-                height: 150,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  separatorBuilder: (context, _) => SizedBox(width: 12),
-                  itemBuilder: (context, index) => Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CardItem(
-                        title: teaItemsData[index]["title"]!,
-                        subtitle: teaItemsData[index]["subtitle"]!,
-                        cost: teaItemsData[index]["cost"]!,
-                        imagepath: teaItemsData[index]["imagepath"]!,
-                      ),
-                    ],
+                Container(
+                  height: 150,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 5,
+                    separatorBuilder: (context, _) => SizedBox(width: 12),
+                    itemBuilder: (context, index) => Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CardItem(
+                          title: dealsItemsData[index]["title"]!,
+                          subtitle: dealsItemsData[index]["subtitle"]!,
+                          cost: dealsItemsData[index]["cost"]!,
+                          imagepath:dealsItemsData[index]["imagepath"]!,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
+              ],
+            ),
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor: Lightblue,
+            unselectedItemColor: Darkblue,
+            onTap: _onTabTapped,
+            currentIndex: _currentIndex,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.category),
+                label: "Category",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.favorite_border),
+                label: "Favourite",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.more_vert_outlined),
+                label: "More",
               ),
             ],
-          ),
-        ),
-      ),
+          )),
     );
   }
 

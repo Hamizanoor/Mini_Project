@@ -24,7 +24,7 @@ class CardItem extends StatelessWidget {
         print('Cupertino Icon Clicked');
       },
       child: Container(
-        height: 100,
+        height: 150,
         width: 100,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
