@@ -6,8 +6,7 @@ import 'package:myfirstapp/widget/cart_module.dart';
 import 'package:myfirstapp/widget/container_card.dart';
 
 class Categorytwo extends StatefulWidget {
-  const Categorytwo({super.key, required CartModel model});
-
+  const Categorytwo({super.key});
   @override
   State<Categorytwo> createState() => _CategorytwoState();
 }
@@ -103,7 +102,7 @@ class _CategorytwoState extends State<Categorytwo> {
                       "By Category",
                       style: TextStyle(
                         fontFamily: "Manrope",
-                        fontSize: 40,
+                        fontSize: 35,
                         fontWeight: FontWeight.w800,
                         color: headingcolor,
                       ),

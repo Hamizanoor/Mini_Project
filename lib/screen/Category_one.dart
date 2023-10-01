@@ -21,7 +21,7 @@ List<Map<String, String>> ShopCardData = [
     "title": "Maybelline Foundation ",
     "subtitle": "Organic",
     "imagepath":
-        "assets/images/tubefoundation.png"
+        "assets/images/liauqid foudntion.png"
   },
   {
     "title": "Maybelline Mascara",
@@ -94,7 +94,7 @@ class _CategoryoneState extends State<Categoryone> {
                       "By Category",
                       style: TextStyle(
                         fontFamily: "Manrope",
-                        fontSize: 40,
+                        fontSize: 35,
                         fontWeight: FontWeight.w800,
                         color: headingcolor,
                       ),
@@ -134,7 +134,7 @@ class _CategoryoneState extends State<Categoryone> {
               return ShopCard(
                 title: ShopCardData[index]["title"]!,
                 subtitle: ShopCardData[index]["subtitle"]!,
-                imagepath: ShopCardData[index]["imagepath"]!,
+                imagepath: ShopCardData[index]["imagepath"]!, onTap: () {  },
               );
             },
             itemCount: ShopCardData.length,

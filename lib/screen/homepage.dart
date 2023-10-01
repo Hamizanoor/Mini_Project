@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/constants/app_color.dart';
+import 'package:myfirstapp/screen/Category2.dart';
 import 'package:myfirstapp/screen/Category_one.dart';
 import 'package:myfirstapp/screen/favurite.dart';
 import 'package:myfirstapp/screen/more.dart';
@@ -87,7 +88,7 @@ List<Map<String, String>> dealsItemsData = [
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final List<Widget> _pages = [Categoryone(), favourite(), More()];
+  final List<Widget> _pages = [Categoryone(), Categorytwo(), favourite(), More()];
 
   void _onTabTapped(int index) {
     setState(() {
@@ -101,9 +102,15 @@ class _HomePageState extends State<HomePage> {
     if (index == 2) {
       // Navigate to the category screen
       Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Categorytwo()));
+    }
+     
+    if (index == 3) {
+      // Navigate to the category screen
+      Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => favourite()));
     }
-    if (index == 3) {
+    if (index == 4) {
       // Navigate to the category screen
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => More()));
@@ -319,6 +326,10 @@ class _HomePageState extends State<HomePage> {
                 label: "Category",
               ),
               BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_basket_outlined),
+                label: "Shop",
+              ),
+              BottomNavigationBarItem(
                 icon: Icon(Icons.favorite_border),
                 label: "Favourite",
               ),
@@ -327,7 +338,8 @@ class _HomePageState extends State<HomePage> {
                 label: "More",
               ),
             ],
-          )),
+          )
+          ),
     );
   }
 

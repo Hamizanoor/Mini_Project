@@ -11,7 +11,7 @@ class ShopCard extends StatelessWidget {
   ShopCard({
     required this.title,
     required this.subtitle,
-    required this.imagepath,
+    required this.imagepath, required Null Function() onTap,
   });
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfirstapp/constants/app_color.dart';
+import 'package:myfirstapp/screen/homepage.dart';
 import 'package:myfirstapp/widget/custom_button.dart';
 
 class HomeView extends StatefulWidget {
@@ -50,8 +51,7 @@ class YourPageWidget extends StatelessWidget {
         height: 812,
         width: 375,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: Lightblue,
+          color: Lightblue
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,7 +95,13 @@ class YourPageWidget extends StatelessWidget {
             ),
             TextButton.icon(
               style: buttonPrimary,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) {
+                    return HomePage();
+                  },
+                ));
+              },
               label: const Text(
                 "Get Started",
                 style: TextStyle(

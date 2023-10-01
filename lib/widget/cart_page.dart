@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfirstapp/constants/app_color.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import 'cart_module.dart';
@@ -15,7 +16,7 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo,
+        backgroundColor:Lightblue,
         title: Text("Cart"),
         actions: <Widget>[
           ElevatedButton(
