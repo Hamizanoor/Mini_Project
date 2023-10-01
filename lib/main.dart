@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myfirstapp/screen/Category_one.dart';
+
 import 'package:myfirstapp/screen/home/home_view.dart';
 
-import 'package:myfirstapp/screen/homepage.dart';
+
 import 'package:myfirstapp/widget/cart_module.dart';
 import 'package:myfirstapp/widget/cart_page.dart';
 

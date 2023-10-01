@@ -88,7 +88,7 @@ List<Map<String, String>> dealsItemsData = [
 
 class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
-  final List<Widget> _pages = [Categoryone(), Categorytwo(), favourite(), More()];
+  final List<Widget> pages = [Categoryone(), Categorytwo(), favourite(), More()];
 
   void _onTabTapped(int index) {
     setState(() {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myfirstapp/constants/app_color.dart';
 
 import 'package:myfirstapp/screen/lipstickshades.dart';
-import 'package:myfirstapp/widget/cart_module.dart';
+
 import 'package:myfirstapp/widget/container_card.dart';
 
 class Categorytwo extends StatefulWidget {

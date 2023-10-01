@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfirstapp/constants/app_color.dart';
 
 
 class Cartitem extends StatelessWidget {
@@ -28,7 +29,7 @@ class Cartitem extends StatelessWidget {
             child: Icon(
               icon,
               size: 48.0,
-              color: Colors.blue,
+              color: Darkblue,
             ),
           ),
           ElevatedButton(

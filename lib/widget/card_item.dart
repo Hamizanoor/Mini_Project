@@ -19,8 +19,7 @@ class CardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Handle the onTap event for the Cupertino icon here
-        // You can add your custom logic or navigate to a new screen.
+        
         print('Cupertino Icon Clicked');
       },
       child: Container(
