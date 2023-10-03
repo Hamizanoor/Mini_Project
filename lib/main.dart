@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'package:myfirstapp/screen/home/home_view.dart';
+
 
 
 import 'package:myfirstapp/widget/cart_module.dart';
 import 'package:myfirstapp/widget/cart_page.dart';
+import 'package:myfirstapp/widget/tabbar.dart';
 
 
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Shopping Cart',
-        home: HomeView(),
+        home: AppTabBar(),
 
         
         routes: {'/cart': (context) => CartPage()},

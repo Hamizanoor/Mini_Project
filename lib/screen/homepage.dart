@@ -95,23 +95,23 @@ class _HomePageState extends State<HomePage> {
       _currentIndex = index;
     });
     if (index == 1) {
-      // Navigate to the category screen
+  
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => Categoryone()));
     }
     if (index == 2) {
-      // Navigate to the category screen
+      
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => Categorytwo()));
     }
      
     if (index == 3) {
-      // Navigate to the category screen
+      
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => favourite()));
     }
     if (index == 4) {
-      // Navigate to the category screen
+      
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => More()));
     }
